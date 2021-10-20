@@ -1,12 +1,14 @@
-const api_url = "http://localhost:8080/room"
+//const api_url = "<heroku_app_url>"
+const api_url = "http://localhost:8080/employee"
 
 function loadData(records = []) {
 	var table_data = "";
 	for(let i=0; i<records.length; i++) {
 		table_data += `<tr>`;
-		table_data += `<td>${records[i].roomtype}</td>`;
-		table_data += `<td>${records[i].roomnumber}</td>`;
-		table_data += `<td>${records[i].status}</td>`;
+		table_data += `<td>${records[i].name}</td>`;
+		table_data += `<td>${records[i].age}</td>`;
+		table_data += `<td>${records[i].city}</td>`;
+		table_data += `<td>${records[i].designation}</td>`;
 		table_data += `<td>`;
 		table_data += `<a href="edit.html?id=${records[i]._id}"><button class="btn btn-primary">Edit</button></a>`;
 		table_data += '&nbsp;&nbsp;';
@@ -35,21 +37,21 @@ function getDataById(id) {
 	
 		console.log(data);
 		document.getElementById("id").value = data._id;
-		document.getElementById("roomtype").value = data.roomtype;
-		document.getElementById("roomnumber").value = data.roomnumber;
-		document.getElementById("status").value = data.status;
-		
+		document.getElementById("name").value = data.name;
+		document.getElementById("age").value = data.age;
+		document.getElementById("city").value = data.city;
+		document.getElementById("designation").value = data.designation;
 	})
 }
 
 
 function postData() {
-	var name = document.getElementById("roomtype").value;
-	var age = document.getElementById("roomnumber").value;
-	var city = document.getElementById("status").value;
+	var name = document.getElementById("name").value;
+	var age = document.getElementById("age").value;
+	var city = document.getElementById("city").value;
+	var designation = document.getElementById("designation").value;
 	
-	
-	data = {roomtype: roomtype, roomnumber: roomnumber, status: status};
+	data = {name: name, age: age, city: city, designation: designation};
 	
 	fetch(api_url, {
 		method: "POST",
@@ -70,12 +72,12 @@ function postData() {
 function putData() {
 	
 	var _id = document.getElementById("id").value;
-	var name = document.getElementById("roomtype").value;
-	var age = document.getElementById("roomnumber").value;
-	var city = document.getElementById("status").value;
+	var name = document.getElementById("name").value;
+	var age = document.getElementById("age").value;
+	var city = document.getElementById("city").value;
+	var designation = document.getElementById("designation").value;
 	
-	
-	data = {_id: _id, roomtype: roomtype, roomnumber: roomnumber, status: status};
+	data = {_id: _id, name: name, age: age, city: city, designation: designation};
 	
 	fetch(api_url, {
 		method: "PUT",

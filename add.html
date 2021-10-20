@@ -11,27 +11,31 @@
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				  <div class="navbar-nav">
 					<a class="nav-link" href="index.html">Listing</a>
-					<a class="nav-link active" aria-current="page" href="add.html">Add New Room</a>
+					<a class="nav-link active" aria-current="page" href="add.html">Add New Employee</a>
 				  </div>
 				</div>
 			  </div>
 			</nav>
 		</header>
 		
-		<h3>Add Room</h3>
+		<h3>Add Document</h3>
 		
 		<form onsubmit="return false;">
 		  <div class="mb-3">
-			<label for="name" class="form-label">Room Type</label>
-			<input type="text" class="form-control" id="roomtype" autofocus>
+			<label for="name" class="form-label">Name</label>
+			<input type="text" class="form-control" id="name" autofocus>
 		  </div>
 		  <div class="mb-3">
-			<label for="exampleInputPassword1" class="form-label">Room Number</label>
-			<input type="text" class="form-control" id="roomnumber">
+			<label for="exampleInputPassword1" class="form-label">Age</label>
+			<input type="text" class="form-control" id="age">
 		  </div>
 		  <div class="mb-3">
-			<label for="city" class="form-label">Status</label>
-			<input type="text" class="form-control" id="status">
+			<label for="city" class="form-label">City</label>
+			<input type="text" class="form-control" id="city">
+		  </div>
+		  <div class="mb-3">
+			<label for="city" class="form-label">Designation</label>
+			<input type="text" class="form-control" id="designation">
 		  </div>
 		  <button class="btn btn-primary" onclick="return postData()">Submit</button>
 		  <a href="index.html" class="btn btn-primary">Cancel</a>
